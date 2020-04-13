@@ -46,6 +46,13 @@
     const { offsetWidth: width, offsetHeight: height } = hero;
     // to record where the cursor was
     let { offsetX: x, offsetY: y } = e;
+    // need to make hover coordinates uniform across entire screen despite h1
+    // "this" is the thing that you listened on
+    console.log(this, e.target);
+    if(this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
     console.log(x, y);
 
 
