@@ -35,6 +35,24 @@
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+
+  function shadow(e) {
+    // get the width and the height of the thing we hover over (the hero)
+    // const width = hero.offsetWidth;
+    // const height = hero.offsetHeight;
+    // below is ES6 restructured and does the same thing
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    // to record where the cursor was
+    let { offsetX: x, offsetY: y } = e;
+    console.log(x, y);
+
+
+  }
+
+  hero.addEventListener('mousemove', shadow);
+
 </script>
 </body>
 </html>
