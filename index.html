@@ -25,11 +25,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgba(255, 0, 151, 1);
   }
 
   h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    text-shadow: 10px 10px 0 white;
     font-size: 100px;
   }
   </style>
@@ -37,7 +37,7 @@
 <script>
   const hero = document.querySelector('.hero');
   const text = hero.querySelector('h1');
-  const walk = 100; // 100px
+  const walk = 400; // 100px
 
 
   function shadow(e) {
@@ -61,10 +61,10 @@
     // console.log(xWalk, yWalk);
 
     text.style.textShadow = `
-      ${xWalk}px ${yWalk}px 0 red,
-      ${xWalk * -1}px ${yWalk}px 0 blue,
-      ${yWalk}px ${xWalk * - 1}px 0 yellow,
-      ${yWalk * -1}px ${xWalk}px 0 green      
+      ${xWalk}px ${yWalk}px 0 rgba(42, 255, 14, 1),
+      ${xWalk * -1}px ${yWalk}px 0 rgba(75, 255, 226, 1),
+      ${yWalk}px ${xWalk * - 1}px 0 rgba(247, 255, 9, 1),
+      ${yWalk * -1}px ${xWalk}px 0 rgba(255, 130, 0, 1)     
       
       `;
 
