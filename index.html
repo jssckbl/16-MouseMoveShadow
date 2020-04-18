@@ -37,24 +37,30 @@
 <script>
   const hero = document.querySelector('.hero');
   const text = hero.querySelector('h1');
+  const walk = 100; // 100px
+
 
   function shadow(e) {
-    // get the width and the height of the thing we hover over (the hero)
-    // const width = hero.offsetWidth;
-    // const height = hero.offsetHeight;
-    // below is ES6 restructured and does the same thing
+    /* get the width and the height of the thing we hover over (the hero)
+    const width = hero.offsetWidth;
+    const height = hero.offsetHeight;
+    below is ES6 restructured and does the same thing */
     const { offsetWidth: width, offsetHeight: height } = hero;
     // to record where the cursor was
     let { offsetX: x, offsetY: y } = e;
-    // need to make hover coordinates uniform across entire screen despite h1
-    // "this" is the thing that you listened on
+    /* need to make hover coordinates uniform across entire screen despite h1
+    "this" is the thing that you listened on */
     console.log(this, e.target);
     if(this !== e.target) {
       x = x + e.target.offsetLeft;
       y = y + e.target.offsetTop;
     }
-    console.log(x, y);
+    //  console.log(x, y);
+    const xWalk = Math.round(x / width * walk) - (walk / 2);
+    const yWalk = Math.round(y / width * walk) - (walk / 2);
+    // console.log(xWalk, yWalk);
 
+    text.style.textShadow = `${xWalk}px ${yWalk}px 0 red`;
 
   }
 
