@@ -50,7 +50,7 @@
     let { offsetX: x, offsetY: y } = e;
     /* need to make hover coordinates uniform across entire screen despite h1
     "this" is the thing that you listened on */
-    console.log(this, e.target);
+    // console.log(this, e.target);
     if(this !== e.target) {
       x = x + e.target.offsetLeft;
       y = y + e.target.offsetTop;
@@ -62,7 +62,9 @@
 
     text.style.textShadow = `
       ${xWalk}px ${yWalk}px 0 red,
-      ${xWalk * -1}px ${yWalk}px 0 blue
+      ${xWalk * -1}px ${yWalk}px 0 blue,
+      ${yWalk}px ${xWalk * - 1}px 0 yellow,
+      ${yWalk * -1}px ${xWalk}px 0 green      
       
       `;
 
